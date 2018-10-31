@@ -1,0 +1,26 @@
+{
+    "presets": [
+        ["env", {
+            "useBuiltIns": true,
+            "targets": {
+                "browsers": ["last 2 versions", "> 5%", "not ie <= 10"],
+                "uglify": true
+            },
+            "modules": false
+        }]
+    ],
+    "plugins": [
+        ["transform-runtime", {
+            "helpers": false,
+            "polyfill": false,
+            "regenerator": true,
+            "moduleName": "babel-runtime"
+        }],
+        ["transform-object-rest-spread", {
+            "useBuiltIns": true
+        }],
+        "syntax-dynamic-import",
+        "transform-class-properties"
+    ],
+    "comments": false
+}

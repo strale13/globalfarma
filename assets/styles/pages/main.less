@@ -1,0 +1,222 @@
+@import '../variables';
+
+.main-about-company {
+    .about-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 50px;
+
+        .left {
+            margin-top: 30px;
+
+            p {
+                font-size: @font-size-small;
+                line-height: 24px;
+                color: @space-gray;
+
+                &:not(:last-child) {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        .right {
+            position: relative;
+            display: flex;
+            justify-content: center;
+
+            .drugs-1 {
+                width: 70%;
+                height: 70%;
+
+                @media screen and (max-width: @screen-md) {
+                    width: 50%;
+                    height: 50%;
+                }
+            }
+        }
+
+        @media screen and (max-width: @screen-md) {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+.products-container {
+    display: grid;
+    grid-template-columns: 160px calc(100% - 220px);
+    grid-gap: 60px;
+    min-height: 320px;
+
+    .left {
+        width: 160px;
+        height: 100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+
+        .name-block {
+            span {
+                font-size: @font-size-extra-small;
+                color: @space-gray;
+
+                @media screen and (max-width: @screen-md) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .right {
+        position: relative;
+        grid-area: ~'1 / 2 / 3 / 3';
+
+        .right-content {
+            display: flex;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .swiper-container {
+            padding: 20px 10px;
+            margin: -20px -10px;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 60px;
+            height: 200px;
+            background-size: 14px;
+            margin-top: -100px;
+            outline: none;
+
+            @media screen and (max-width: @screen-sm) {
+                display: none;
+            }
+        }
+
+        .swiper-button-next {
+            right: -60px;
+        }
+
+        .swiper-button-prev {
+            left: -60px;
+        }
+
+        @media screen and (max-width: @screen-md) {
+            grid-area: initial;
+        }
+    }
+
+    .button-block {
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-end;
+
+        .button {
+            margin-bottom: 15px;
+        }
+    }
+
+    .button-block-center {
+        @media screen and (max-width: @screen-sm) {
+            align-items: center;
+        }
+    }
+
+    @media screen and (max-width: @screen-md) {
+        grid-template-columns: 100%;
+    }
+}
+
+.main-products {
+    background-color: @light-gray;
+
+}
+
+.main-reviews {
+
+    .reviews-container {
+        min-height: 260px;
+
+        .right {
+            height: 260px;
+
+            .swiper-container {
+                height: 300px;
+            }
+        }
+    }
+}
+
+.main-news {
+
+    .news-container {
+        min-height: 175px;
+
+        .right {
+
+            .right-content {
+
+                .news-preview {
+                    width: 45%;
+                    display: flex;
+                    flex-flow: column;
+                    justify-content: space-between;
+
+                    h3 {
+                        font-size: @font-size-optimal;
+                        color: @gray;
+                        font-weight: 400;
+                    }
+                    .preview {
+                        font-size: @font-size-extra-small;
+                        line-height: 30px;
+                        color: @gray;
+                    }
+
+                    @media screen and (max-width: @screen-sm) {
+                        width: 100%;
+
+                        &:not(:last-child) {
+                            margin-bottom: 50px;
+                        }
+                    }
+                }
+
+                @media screen and (max-width: @screen-sm) {
+                    flex-flow: column;
+                }
+            }
+        }
+    }
+}
+
+.main-partners {
+
+    .partners-container {
+        min-height: 110px;
+
+        .right-content {
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .logo-partners {
+                width: 25%;
+                margin-right: 20px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+
+                @media screen and (max-width: @screen-md) {
+                    width: 33%;
+                    margin-bottom: 40px;
+                }
+            }
+        }
+
+    }
+}

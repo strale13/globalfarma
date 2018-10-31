@@ -1,0 +1,52 @@
+@import '../variables';
+
+.dragger {
+
+    .dragger-prev,
+    .dragger-next {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        z-index: 1;
+        display: flex;
+        transition: @default-transition;
+
+        img {
+            width: 20px;
+            cursor: pointer;
+        }
+    }
+
+    .dragger-prev {
+        background: linear-gradient(90deg, @white 0%, fade(@white, 10%) 100%);
+        left: 0;
+        justify-content: flex-start;
+
+        img {
+            padding-left: 10px;
+        }
+    }
+
+    .dragger-next {
+        background: linear-gradient(90deg, fade(@white, 10%) 0%, @white 100%);
+        right: 0;
+        justify-content: flex-end;
+
+        img {
+            transform: rotate(180deg);
+            padding-right: 10px;
+        }
+    }
+
+    &.start-pos {
+        .dragger-prev {
+            opacity: 0;
+        }
+    }
+    &.end-pos {
+        .dragger-next {
+            opacity: 0;
+        }
+    }
+}
